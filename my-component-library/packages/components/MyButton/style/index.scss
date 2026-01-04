@@ -1,0 +1,8 @@
+.my-button {
+  font-weight: 500;
+  transition: $transition-base;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}

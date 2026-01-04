@@ -1,0 +1,35 @@
+// 颜色系统
+$primary-color: #409EFF !default;
+$success-color: #67C23A !default;
+$warning-color: #E6A23C !default;
+$danger-color: #F56C6C !default;
+$info-color: #909399 !default;
+
+// 字体
+$font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', '微软雅黑', Arial, sans-serif !default;
+$font-size-base: 14px !default;
+$font-size-small: 12px !default;
+$font-size-large: 16px !default;
+
+// 间距
+$spacing-base: 16px !default;
+$spacing-small: 8px !default;
+$spacing-large: 24px !default;
+
+// 圆角
+$border-radius-base: 4px !default;
+$border-radius-small: 2px !default;
+$border-radius-large: 8px !default;
+
+// 阴影
+$box-shadow-base: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+$box-shadow-light: 0 2px 4px 0 rgba(0, 0, 0, 0.12) !default;
+
+// 过渡
+$transition-base: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+
+// 层级
+$z-index-base: 1000 !default;
+$z-index-modal: 2000 !default;
+$z-index-dropdown: 3000 !default;

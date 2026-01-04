@@ -1,0 +1,10 @@
+src
+packages
+docs
+vite.config.ts
+tsconfig*.json
+*.md
+!README.md
+.gitignore
+.editorconfig
+index.html

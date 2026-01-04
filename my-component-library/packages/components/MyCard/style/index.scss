@@ -1,0 +1,8 @@
+.my-card {
+  border-radius: $border-radius-base;
+  transition: $transition-base;
+  
+  &:hover {
+    box-shadow: $box-shadow-base;
+  }
+}
