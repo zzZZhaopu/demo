@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    // 编译目标：ES2020，支持现代浏览器
+    "target": "ES2020",
+    // 模块系统：ESNext（使用最新的 ES 模块标准）
+    "module": "ESNext",
+    // 包含的类型库：ES2020 + DOM API
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    // JSX 转换方式：react-jsx（React 17+ 新方式，无需导入 React）
+    "jsx": "react-jsx",
+    // 模块解析策略：bundler（适用于现代打包工具 Vite/esbuild）
+    "moduleResolution": "bundler",
+    // 允许导入 JSON 文件
+    "resolveJsonModule": true,
+    // 允许导入 JS 文件
+    "allowJs": true,
+    // 开启严格模式（包含所有严格检查）
+    "strict": true,
+    // 允许 CommonJS 和 ES6 模块互操作
+    "esModuleInterop": true,
+    // 跳过 node_modules 的类型检查，加速编译
+    "skipLibCheck": true,
+    // 强制文件名大小写一致
+    "forceConsistentCasingInFileNames": true,
+    // 生成 .d.ts 类型声明文件
+    "declaration": true,
+    // 生成 .d.ts.map 源映射文件（方便调试类型）
+    "declarationMap": true,
+    // 生成 .js.map 源映射文件（方便调试代码）
+    "sourceMap": true
+  }
+}

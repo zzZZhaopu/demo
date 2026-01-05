@@ -1,0 +1,23 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  // Turbo 任务配置：定义每个任务的依赖关系、缓存策略等
+  "tasks": {
+    // 构建任务
+    "build": {
+      // dependsOn: ["^build"] 表示先构建所有依赖包，再构建当前包
+      // ^ 符号表示依赖的包（比如示例项目依赖组件库，组件库会先构建）
+      "dependsOn": ["^build"],
+      // outputs: 指定构建产物目录，Turbo 会缓存这些目录以加速后续构建
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    // 开发任务
+    "dev": {
+      "cache": false, // 开发模式不缓存，确保每次都是最新的
+      "persistent": true // 持久运行的任务（如开发服务器）
+    },
+    // 清理任务
+    "clean": {
+      "cache": false // 清理操作不需要缓存
+    }
+  }
+}

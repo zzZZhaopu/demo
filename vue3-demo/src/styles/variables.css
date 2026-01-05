@@ -1,0 +1,10 @@
+/* CSS 变量 - 全局变量定义 */
+
+:root {
+  /* 颜色变量 */
+  --color-primary: #409eff;
+  --color-success: #67c23a;
+  --color-warning: #e6a23c;
+  --color-danger: #f56c6c;
+  --color-info: #909399;
+}

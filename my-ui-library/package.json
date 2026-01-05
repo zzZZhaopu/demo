@@ -1,0 +1,31 @@
+{
+  "name": "my-ui-library",
+  "version": "1.0.0",
+  "description": "UI Component Library with React + Vue",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "build": "turbo build --filter='./packages/*'",
+    "dev": "turbo dev --filter='./packages/*'",
+    "dev:examples": "turbo dev --filter='./examples/*'",
+    "dev:all": "turbo dev",
+    "clean": "turbo clean",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "publish:all": "changeset publish",
+    "release": "pnpm changeset version && pnpm build && pnpm publish:all"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "@types/node": "^22.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.0",
+    "tsup": "^8.3.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,30 @@
+/* Element Plus 主题定制 - 使用 Sass 变量 */
+
+// 覆盖 Element Plus 的 Sass 变量
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // 主色
+  $colors: (
+    'primary': (
+      'base': #ff6700,
+    ),
+    'success': (
+      'base': #52c41a,
+    ),
+    'warning': (
+      'base': #faad14,
+    ),
+    'danger': (
+      'base': #ff4d4f,
+    ),
+  ),
+  // 其他变量
+  $border-radius: (
+    'base': 8px,
+  ),
+  $font-size: (
+    'base': 14px,
+  )
+);
+
+// 导入所有 Element Plus 组件样式
+@use 'element-plus/theme-chalk/src/index.scss' as *;

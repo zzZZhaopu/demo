@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    // 目标 JavaScript 版本：ES2020（Node.js 18+ 支持）
+    "target": "ES2020",
+    
+    // 模块系统：ESNext（使用最新的 ES 模块标准）
+    "module": "ESNext",
+    
+    // 输出目录（实际由 tsup 控制，这里仅用于类型检查）
+    "outDir": "./dist",
+    
+    // 模块解析策略：Node.js 风格（支持 node_modules）
+    "moduleResolution": "Bundler",
+    
+    // 允许导入 .json 文件
+    "resolveJsonModule": true,
+    
+    // 严格模式：开启所有严格类型检查
+    "strict": true,
+    
+    // 跳过库文件的类型检查（加快编译速度）
+    "skipLibCheck": true,
+    
+    // 允许从没有默认导出的模块中默认导入
+    "esModuleInterop": true,
+    
+    // 强制文件名大小写一致
+    "forceConsistentCasingInFileNames": true,
+    
+    // 生成类型声明文件（.d.ts）
+    "declaration": true,
+    
+    // 生成声明文件映射（方便调试）
+    "declarationMap": true,
+    
+    // 包含的类型定义
+    "types": ["node"],
+    
+    // 库文件：包含 ES2020 和 DOM 类型
+    "lib": ["ES2020"]
+  },
+  
+  // 包含的文件
+  "include": ["src/**/*"],
+  
+  // 排除的文件
+  "exclude": ["node_modules", "dist"]
+}

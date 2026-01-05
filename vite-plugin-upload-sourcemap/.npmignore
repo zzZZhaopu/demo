@@ -1,0 +1,29 @@
+# @zzzzzzhaopu/vite-plugin-upload-sourcemap
+
+A Vite plugin to automatically upload SourceMap files to monitoring platforms after production build.
+
+## Installation
+
+```bash
+npm install @zzzzzzhaopu/vite-plugin-upload-sourcemap -D
+```
+
+## Usage
+
+```typescript
+import { uploadSourceMapPlugin } from '@zzzzzzhaopu/vite-plugin-upload-sourcemap'
+
+export default defineConfig({
+  plugins: [
+    uploadSourceMapPlugin({
+      enabled: mode === 'production',
+      uploadUrl: 'https://your-platform.com/api/sourcemap',
+      apiKey: process.env.SOURCEMAP_API_KEY,
+      projectName: 'my-project',
+      version: '1.0.0'
+    })
+  ]
+})
+```
+
+See [README.md](./README.md) for full documentation.

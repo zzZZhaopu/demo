@@ -1,0 +1,45 @@
+{
+  "name": "@zzzzzzhaopu/vue",
+  "version": "1.0.7",
+  "description": "Vue UI component library",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles": {
+      "types": "./dist/styles/index.d.css.ts",
+      "default": "./dist/styles/index.css"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "pnpm clean && pnpm build:js && pnpm build:types && pnpm build:css && pnpm build:css-types",
+    "build:js": "tsup",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist",
+    "build:css": "tailwindcss -i ./src/styles/index.css -o ./dist/styles/index.css --minify",
+    "build:css-types": "echo '// CSS module type declaration\ndeclare const styles: string;\nexport default styles;' > ./dist/styles/index.d.css.ts",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "vue": "^3.5.0",
+    "unplugin-vue": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

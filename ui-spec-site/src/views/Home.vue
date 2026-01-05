@@ -1,5 +1,6 @@
 <template>
   <div class="home-container">
+    <Button variant="primary">Click me</Button>
     <!-- 页面标题 -->
     <div class="page-header">
       <h1>前端开发规范示例</h1>
@@ -8,8 +9,8 @@
 
     <!-- 导航卡片 -->
     <div class="nav-grid">
-      <el-card 
-        class="nav-card" 
+      <el-card
+        class="nav-card"
         shadow="hover"
         @click="navigateTo('/form-demo')"
       >
@@ -22,8 +23,8 @@
         </div>
       </el-card>
 
-      <el-card 
-        class="nav-card" 
+      <el-card
+        class="nav-card"
         shadow="hover"
         @click="navigateTo('/list-demo')"
       >
@@ -36,8 +37,8 @@
         </div>
       </el-card>
 
-      <el-card 
-        class="nav-card" 
+      <el-card
+        class="nav-card"
         shadow="hover"
         @click="navigateTo('/dialog-demo')"
       >
@@ -50,8 +51,8 @@
         </div>
       </el-card>
 
-      <el-card 
-        class="nav-card" 
+      <el-card
+        class="nav-card"
         shadow="hover"
         @click="navigateTo('/feedback-demo')"
       >
@@ -107,14 +108,15 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import { Edit, List, Monitor, Bell } from '@element-plus/icons-vue'
+import { useRouter } from "vue-router";
+import { Edit, List, Monitor, Bell } from "@element-plus/icons-vue";
+import { Button } from "@zzzzzzhaopu/vue";
 
-const router = useRouter()
+const router = useRouter();
 
 const navigateTo = (path: string) => {
-  router.push(path)
-}
+  router.push(path);
+};
 </script>
 
 <style scoped>
@@ -207,7 +209,7 @@ const navigateTo = (path: string) => {
   .page-header h1 {
     font-size: 24px;
   }
-  
+
   .nav-grid {
     grid-template-columns: 1fr;
   }
