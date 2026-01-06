@@ -1,0 +1,6 @@
+# Husky commit-msg hook
+# 
+# 作用：在 git commit 之后、提交信息保存之前，检查提交信息格式
+# 确保提交信息符合 commitlint 配置的规范
+
+npx --no -- commitlint --edit $1

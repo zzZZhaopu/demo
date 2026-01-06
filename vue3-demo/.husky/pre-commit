@@ -1,0 +1,6 @@
+# Husky pre-commit hook
+# 
+# 作用：在 git commit 之前自动执行代码检查
+# 只检查暂存区（staged）的文件，不会检查所有文件
+
+npx lint-staged
