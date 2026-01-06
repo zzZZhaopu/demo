@@ -8,12 +8,15 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Legacy from "@vitejs/plugin-legacy";
 // import { uploadSourceMapPlugin } from "./plugins/vite-plugin-upload-sourcemap";
-import { uploadSourceMapPlugin } from "@zzzzzzhaopu/vite-plugin-upload-sourcemap";
+// import { uploadSourceMapPlugin } from "@zzzzzzhaopu/vite-plugin-upload-sourcemap";
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   // 加载环境变量
   const env = loadEnv(mode, process.cwd());
+
+  console.log('process.env.SENTRY_AUTH_TOKEN=====', process.env.VITE_SENTRY_AUTH_TOKEN)
 
   // 转换环境变量为布尔值
   const sourcemap = env.VITE_BUILD_SOURCEMAP === "true";
@@ -49,18 +52,32 @@ export default defineConfig(({ mode }) => {
         targets: ["defaults", "ie >= 11"],
       }),
       // SourceMap 上传插件：生产环境打包后自动上传 SourceMap 到监控平台
-      uploadSourceMapPlugin({
-        enabled: mode === "production", // 仅在生产环境启用
-        uploadUrl: env.VITE_SOURCEMAP_UPLOAD_URL,
-        apiKey: env.VITE_SOURCEMAP_API_KEY,
-        projectName: "vue3-demo",
-        version: process.env.npm_package_version || "1.0.0",
-        removeSourceMap: true, // 上传后自动删除 .map 文件
-        uploadFn: (_file, _options) => {
-          console.log('options=====', _options)
-          return new Promise((resolve, _reject) => {
-            resolve(true);
-          });
+      // uploadSourceMapPlugin({
+      //   enabled: mode === "production", // 仅在生产环境启用
+      //   uploadUrl: env.VITE_SOURCEMAP_UPLOAD_URL,
+      //   apiKey: env.VITE_SOURCEMAP_API_KEY,
+      //   projectName: "vue3-demo",
+      //   version: process.env.npm_package_version || "1.0.0",
+      //   removeSourceMap: true, // 上传后自动删除 .map 文件
+      //   uploadFn: (_file, _options) => {
+      //     console.log("options=====", _options);
+      //     return new Promise((resolve, _reject) => {
+      //       resolve(true);
+      //     });
+      //   },
+      // }),
+      sentryVitePlugin({
+        org: "zzz-wjc",
+        project: "javascript-vue",
+        authToken: "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",
+        sourcemaps: {
+          // As you're enabling client source maps, you probably want to delete them after they're uploaded to Sentry.
+          // Set the appropriate glob pattern for your output folder - some glob examples below:
+          filesToDeleteAfterUpload: [
+            "./**/*.map",
+            ".*/**/public/**/*.map",
+            "./dist/**/client/**/*.map",
+          ],
         },
       }),
     ],
