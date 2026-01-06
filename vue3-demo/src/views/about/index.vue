@@ -2,7 +2,6 @@
   <div>
     <h1>about</h1>
     <router-link to="/">home</router-link>
-    <el-button @click="test">test</el-button>
   </div>
 </template>
 
@@ -11,9 +10,6 @@ import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 const router = useRouter();
-const test = () => {
-  (route as any).test();
-};
 
 console.log(route);
 console.log(router);

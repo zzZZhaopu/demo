@@ -16,7 +16,10 @@ export default defineConfig(({ mode }) => {
   // 加载环境变量
   const env = loadEnv(mode, process.cwd());
 
-  console.log('process.env.SENTRY_AUTH_TOKEN=====', process.env.VITE_SENTRY_AUTH_TOKEN)
+  console.log(
+    "process.env.SENTRY_AUTH_TOKEN=====",
+    process.env.VITE_SENTRY_AUTH_TOKEN
+  );
 
   // 转换环境变量为布尔值
   const sourcemap = env.VITE_BUILD_SOURCEMAP === "true";
@@ -69,15 +72,10 @@ export default defineConfig(({ mode }) => {
       sentryVitePlugin({
         org: "zzz-wjc",
         project: "javascript-vue",
-        authToken: "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",
+        authToken:
+          "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",
         sourcemaps: {
-          // As you're enabling client source maps, you probably want to delete them after they're uploaded to Sentry.
-          // Set the appropriate glob pattern for your output folder - some glob examples below:
-          filesToDeleteAfterUpload: [
-            "./**/*.map",
-            ".*/**/public/**/*.map",
-            "./dist/**/client/**/*.map",
-          ],
+          filesToDeleteAfterUpload: ["./dist/**/*.map"],
         },
       }),
     ],
